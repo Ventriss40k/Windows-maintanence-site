@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    <div>
+    <h2>Замовити послуги або отримати консультацію</h2>
+    Зверніться до нас зручним для вас способом<br>
+
+    Зателефонуйте:<br>
+    {% for с in contact %}
+    <a href="tel:{{ с.phone_number }}" data-rel="external"> <b>{{ с.operator }}</b> {{ с.phone_number }}</a>
+    <br>
+    {% endfor %}  
+
+    Напишіть:<br>
+    <a href="viber://chat?number=0939864178">Відкрити чат Вайбер</a><br>
+    <a href="https://t.me/anton_nazaruk">Відкрити чат Телеграм</a><br>
+    <a href="mailto:nazarukav@gmail.com" data-rel="external">Написати на пошту</a><br />
+    <h2>НЕ ЗАБУТИ ВСТАВИТИ КОРЕКТНІ ДАНІ</h2>
+    
+        
+</div>
+    
+</body>
+</html>

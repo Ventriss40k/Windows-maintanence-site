@@ -1,0 +1,29 @@
+{% extends 'main_app/layout.html' %}
+
+{%block title%}Архів робіт{% endblock %}
+
+{% block content %}
+<div >
+    <h1>Наші роботи</h1>
+    {% for arc_log in archives %}
+    <div class="archive_post">
+    <b>{{ arc_log.name }}</b>    
+        <br>
+        <img src="{{ arc_log.image_1.url }}" class="archive_img">
+        <img src="{{ arc_log.image_2.url }}" class="archive_img">
+        <img src="{{ arc_log.image_3.url }}" class="archive_img">
+        <br>
+        {{ arc_log.description }}
+        <br>
+    </div>
+    {% endfor%}
+</div>
+
+
+    <!-- {% if item.image != None %}
+        <img src="{{ item.image.url }}">
+        {% endif %}
+
+
+
+{% endblock %}

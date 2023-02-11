@@ -1,0 +1,114 @@
+{% extends 'main_app/layout.html' %}
+{%block title%}Головна{% endblock %}
+
+
+{% block content %}
+    <!--offer-->
+
+<div id="offer">
+    {% for o in offer %}
+        <h1>{{ o.title }}</h1>
+        <p>{{ o.text }}</p>
+    {% endfor %}
+
+</div>
+
+    <!--services-->
+<div>    
+    <h2>Послуги</h2><i>Натисніть, щоб дізнатися більше</i>
+    <ul type="none">
+    {% for s in service %}
+    <li>
+        <details>
+            <summary><b>{{ s.title }}</b></summary>            
+            <p>{{ s.text }}</p>
+        </details>
+        
+    </li>
+    {% endfor %}    
+    </ul>
+</div>
+
+
+    <!-- prices -->
+
+    <!-- m-plast -->
+    <div>    
+        <h2>Прайс лист</h2>
+        <details>
+            <summary><b>Металопластикові вікна</b></summary>
+            <table>
+                <tr>
+                    <th>Назва послуги</th>
+                    <th>Ціна</th>
+                </tr>
+                {% for p in m_plast_price %}
+                <tr>
+                    <td>{{ p.name }}</td>
+                    <td>{{ p.price }}</td>
+                </tr>
+                {% endfor %} 
+            </table>
+        </details>
+
+   
+
+<!-- aluminium -->
+
+    <details>
+        <summary><b>Алюмінієві вікна</b></summary>
+        <table>
+            <tr>
+                <th>Назва послуги</th>
+                <th>Ціна</th>
+            </tr>
+            {% for p in aluminium_price %}
+            <tr>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }}</td>
+            </tr>
+            {% endfor %} 
+        </table>
+    </details>
+    
+
+<!-- wood -->
+ 
+
+    <details>
+        <summary><b>Дерев'яні вікна</b></summary>
+        <table>
+            <tr>
+                <th>Назва послуги</th>
+                <th>Ціна</th>
+            </tr>
+            {% for p in wood_price %}
+            <tr>
+                <td>{{ p.name }}</td>
+                <td>{{ p.price }}</td>
+            </tr>
+            {% endfor %} 
+        </table>
+    </details>
+    
+</div>
+    <!-- contacts -->
+    <div>
+        <h2>Контакти</h2> 
+        {% for с in contact %}
+           <b>{{ с.operator }}</b> {{ с.phone_number }} <br>
+        {% endfor %}    
+
+    </div>
+
+
+
+    <!-- Client form -->
+    <!-- <div>
+        <h2>Замовити послуги або задати запитання</h2>
+        <button>
+            <a href="mailto:nazarukav96@gmail.com"></a>
+        </button>
+    </div> -->
+    {% include 'main_app/client_contact_form.html' %}
+    {% endblock %}

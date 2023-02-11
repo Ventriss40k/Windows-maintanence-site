@@ -1,0 +1,44 @@
+{% extends 'main_app/layout.html' %}
+
+{%block title%}Про нас{% endblock %}
+
+{% block content %}
+
+    <h1>Про нас</h1>
+    <div>
+        <h2>Про компанію</h2>
+        {% for company in about_company %}
+        <!-- <b>{{ company.name }}</b> -->
+        <br>
+        <img src="{{ company.photo.url }}" class="about_photo">
+        <br>
+        {{ company.description }} 
+        {% endfor %}
+    </div>
+
+
+    <div>
+        <h2>Про засновника</h2>
+        {% for owner in about_owner %}
+        <!-- <b>{{ owner.name }} </b> -->
+        <br>
+        <img src="{{ owner.photo.url }}" class="about_photo">
+        <br>
+        {{ owner.description }} 
+        {% endfor %}
+    </div>
+    
+    <div>
+        <h2>Про команду майстрів</h2>
+        {% for staff in about_staff %}
+        <div>
+            <b>{{ staff.name }} </b>
+            <br>
+            <img src="{{ staff.photo.url }}" class="about_photo">
+            <br>
+            {{ staff.description }}
+        </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
