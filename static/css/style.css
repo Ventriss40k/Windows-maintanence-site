@@ -36,7 +36,7 @@ table, th, td {
     margin:0;
     padding-left:30px;
     border-radius: 0%;
-    background: #333;
+    background: #e28743;
     border: none;
 
 
@@ -44,15 +44,15 @@ table, th, td {
     }
     .header_title{
         color: #fff;
-        background: #333;
+        background: #e28743;
         font-size: large;
         /* float: left; */
         width: 10%;
     }
 
     #logo {
-        height: 40px;
-        width: 40px;
+        height: 35px;
+        /*width: 10%;*/
         float: left;
     }
 #header_menu{
