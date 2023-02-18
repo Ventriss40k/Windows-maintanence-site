@@ -14,18 +14,22 @@
 </div>
 
     <!--services-->
-<div>    
+<div>
     <h2>Послуги</h2><i>Натисніть, щоб дізнатися більше</i>
     <ul type="none">
     {% for s in service %}
     <li>
         <details>
-            <summary><b>{{ s.title }}</b></summary>            
+            <summary><b>{{ s.title }}
+            {% if s.link%}
+            <a href={{s.link}}> <small>Дізнатися більше</small></a>
+            {% endif %}
+            </b></summary>
             <p>{{ s.text }}</p>
         </details>
-        
+
     </li>
-    {% endfor %}    
+    {% endfor %}
     </ul>
 </div>
 
@@ -33,7 +37,7 @@
     <!-- prices -->
 
     <!-- m-plast -->
-    <div>    
+    <div>
         <h2>Прайс лист</h2>
         <details>
             <summary><b>Металопластикові вікна</b></summary>
@@ -47,11 +51,11 @@
                     <td>{{ p.name }}</td>
                     <td>{{ p.price }}</td>
                 </tr>
-                {% endfor %} 
+                {% endfor %}
             </table>
         </details>
 
-   
+
 
 <!-- aluminium -->
 
@@ -67,13 +71,13 @@
                 <td>{{ p.name }}</td>
                 <td>{{ p.price }}</td>
             </tr>
-            {% endfor %} 
+            {% endfor %}
         </table>
     </details>
-    
+
 
 <!-- wood -->
- 
+
 
     <details>
         <summary><b>Дерев'яні вікна</b></summary>
@@ -87,17 +91,17 @@
                 <td>{{ p.name }}</td>
                 <td>{{ p.price }}</td>
             </tr>
-            {% endfor %} 
+            {% endfor %}
         </table>
     </details>
-    
+
 </div>
     <!-- contacts -->
     <div>
-        <h2>Контакти</h2> 
+        <h2>Контакти</h2>
         {% for с in contact %}
            <b>{{ с.operator }}</b> {{ с.phone_number }} <br>
-        {% endfor %}    
+        {% endfor %}
 
     </div>
 

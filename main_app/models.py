@@ -3,9 +3,9 @@ from django.db import models
 # Create your models here.
 
 #Моделі:
-# - офер 
+# - офер
 # - послуги (фото, заголовок, текст)
-# - Таблиця цін порядково (назва(текст), ціна від (варчар) 
+# - Таблиця цін порядково (назва(текст), ціна від (варчар)
 # - Контакти (варчар?)
 # - Про себе (Фото, текст)
 # - Роботи архів ( фото, текст)
@@ -28,6 +28,7 @@ class Service(models.Model):
     # image
     title = models.CharField(max_length=80)
     text = models.TextField()
+    link = models.CharField(max_length=80, blank=True)
     def __str__(self) -> str:
         return self.title
 
